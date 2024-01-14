@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10dp"
+        tools:context=".InitialQuestionActivity">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Top_CardView_InitialBlock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:elevation="8dp"
+            android:translationZ="5dp"
+            app:borderWidth="0dp"
+            app:cardBackgroundColor="@android:color/black"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/InitialBlock_lineaLayout_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FF0000"
+                android:orientation="horizontal"
+                android:padding="18dp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="-1dp">
+
+                <TextView
+                    android:id="@+id/textViewBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/stop_waste_time"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/Bg_ImageView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:alpha="0.3"
+            android:contentDescription="@string/backgroundimage"
+            android:scaleType="centerCrop"
+            android:src="@drawable/hourglass_2910948_1280"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Top_CardView_InitialBlock"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="76dp"
+            android:fontFamily="@font/berkshire_swash"
+            android:shadowColor="#787878"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="5"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            android:text="@string/hey_before_wasting_your_time_have_you_finished_all_your_duties_and_tasks"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Top_CardView_InitialBlock" />
+
+        <ImageButton
+            android:id="@+id/wrong_imageButton"
+            android:layout_width="150dp"
+            android:layout_height="90dp"
+            android:background="@drawable/dialog_shape_bg"
+            android:backgroundTint="#FFC107"
+            android:contentDescription="@string/wrong_button"
+            android:elevation="8dp"
+            android:padding="20dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/cross_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/correct_imageButton"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.7" />
+
+        <ImageButton
+            android:id="@+id/correct_imageButton"
+            android:layout_width="150dp"
+            android:layout_height="90dp"
+            android:background="@drawable/dialog_shape_bg"
+            android:backgroundTint="@color/green"
+            android:contentDescription="@string/correct_button"
+            android:elevation="8dp"
+            android:padding="20dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tick_mark_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/wrong_imageButton"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.7" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

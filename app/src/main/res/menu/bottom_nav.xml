@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_blackList"
+        android:icon="@drawable/baseline_app_blocking_24"
+        android:title="BlackListed Apps" />
+    <item
+        android:id="@+id/nav_TimedStops"
+        android:icon="@drawable/baseline_access_time_24"
+        android:title="Add pauses" />
+</menu>
