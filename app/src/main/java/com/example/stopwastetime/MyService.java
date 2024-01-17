@@ -31,10 +31,6 @@ public class MyService extends Service {
 
                 while (true) {
                     String foregroundApp = getForegroundApp();
-                    /*if(endBlockTime.isBefore(LocalTime.now())){
-                        isBlockActive=false;
-                    }*/
-                    //if the app in the foreground is in the blacklist then BLOCK it.
                     if (MainActivity.blackList_Package.contains(new BlackListPackage(foregroundApp)) && isBlockActive) {
                         Intent i;
                         if (goQuestionBlock) {
@@ -63,7 +59,8 @@ public class MyService extends Service {
         final String channelID = "foreground service ID";
         NotificationChannel channel = new NotificationChannel(channelID, channelID, NotificationManager.IMPORTANCE_LOW);
         getSystemService(NotificationManager.class).createNotificationChannel(channel);
-        Notification.Builder notifaction = new Notification.Builder(this, channelID).setContentText("funziona").setContentTitle("la mia app").setSmallIcon(R.drawable.ic_launcher_background);
+        Notification.Builder notifaction = new Notification.Builder(this, channelID).setContentText("funziona")
+                .setContentTitle("la mia app").setSmallIcon(R.drawable.ic_launcher_background);
 
         startForeground(1001, notifaction.build());
         return super.onStartCommand(intent, flags, startId);
@@ -78,9 +75,7 @@ public class MyService extends Service {
     private String getForegroundApp() {
         UsageStatsManager mUsageStatsManager = (UsageStatsManager) getSystemService(USAGE_STATS_SERVICE);
         long currentTime = System.currentTimeMillis();
-        // get usage stats for the last 10 seconds
         List<UsageStats> stats = mUsageStatsManager.queryUsageStats(UsageStatsManager.INTERVAL_DAILY, currentTime - 1000 * 10, currentTime);
-        // search for app with most recent last used time
         String topPackageName = "";
         if (stats != null) {
             long lastUsedAppTime = 0;

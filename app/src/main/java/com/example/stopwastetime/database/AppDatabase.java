@@ -22,7 +22,10 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public static AppDatabase getInstance(Context context) {
         if (instance == null) {
-            return Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "StopWasteTime").allowMainThreadQueries().build();
+            return Room.databaseBuilder(context.getApplicationContext(),
+                    AppDatabase.class, "StopWasteTime")
+                    .allowMainThreadQueries()
+                    .build();
         }
         return instance;
     }
@@ -31,3 +34,5 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract BlackListPackageDao blackListPackageDao();
 
 }
+
+
